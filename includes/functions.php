@@ -179,7 +179,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                 $temp_conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
                 $admin_table = "CREATE TABLE `tbladmin` (
-                    `id` int(11) PRIMARY KEY NOT NULL,
+                    `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `AdminUserName` varchar(255) NOT NULL,
                     `AdminPassword` varchar(255) NOT NULL,
                     `AdminEmailId` varchar(255) NOT NULL,
@@ -189,7 +189,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 
                 $ad_table = "CREATE TABLE `tblads` (
-                    `id` int(11) PRIMARY KEY NOT NULL,
+                    `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `Ad_1` text NOT NULL,
                     `Ad_2` text NOT NULL,
                     `Ad_3` text NOT NULL,
@@ -197,7 +197,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
                 $category_table = "CREATE TABLE `tblcategory` (
-                    `id` int(11) PRIMARY KEY NOT NULL,
+                    `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `CategoryName` varchar(200) DEFAULT NULL,
                     `Description` mediumtext DEFAULT NULL,
                     `PostingDate` timestamp NULL DEFAULT current_timestamp(),
@@ -225,7 +225,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
                   
                 $page_table = "CREATE TABLE `tblpages` (
-                    `id` int(11) PRIMARY KEY NOT NULL,
+                    `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `PageName` varchar(200) DEFAULT NULL,
                     `PageTitle` TEXT DEFAULT NULL,
                     `Description` TEXT DEFAULT NULL,
@@ -241,8 +241,8 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `PostTitle` longtext DEFAULT NULL,
                     `CategoryId` int(11) DEFAULT NULL,
                     `SubCategoryId` int(11) DEFAULT NULL,
-                    `PostDetails` longtext CHARACTER SET utf8 DEFAULT NULL,
-                    `MetaDescription` varchar(160) NOT NULL,
+                    `PostDetails` varchar(1000) DEFAULT NULL,
+                    `MetaDescription` varchar(200) NOT NULL,
                     `MetaKeywords` varchar(160) NOT NULL,
                     `PostingDate` timestamp NULL DEFAULT current_timestamp(),
                     `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
@@ -252,7 +252,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
                   
                 $setting_table = "CREATE TABLE `tblsettings` (
-                    `id` int(11) PRIMARY KEY NOT NULL,
+                    `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `SiteName` varchar(50) DEFAULT NULL,
                     `SiteLogo` varchar(100) DEFAULT NULL,
                     `ResLogo` varchar(100) NOT NULL,
@@ -263,7 +263,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
                 $subcategory_table = "CREATE TABLE `tblsubcategory` (
-                    `SubCategoryId` int(11) PRIMARY KEY NOT NULL,
+                    `SubCategoryId` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `CategoryId` int(11) DEFAULT NULL,
                     `Subcategory` varchar(255) DEFAULT NULL,
                     `SubCatDescription` mediumtext DEFAULT NULL,

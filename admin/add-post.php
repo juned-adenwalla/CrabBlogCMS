@@ -38,7 +38,8 @@ $imgnewfile=md5($imgfile).$extension;
 move_uploaded_file($_FILES["postimage"]["tmp_name"],__DIR__."postimages/".$imgnewfile);
 
 $status=1;
-$query=mysqli_query($con,"insert into tblposts(PostTitle,CategoryId,SubCategoryId,PostDetails,PostUrl,Is_Active,PostImage,MetaDescription,MetaKeywords) values('$posttitle','$catid','$subcatid','$postdetails','$url','$status','$imgnewfile','$metadesc','$metakey')");
+$query=mysqli_query($con,"INSERT INTO `tblposts`(`PostTitle`, `CategoryId`, `SubCategoryId`, `PostDetails`, `MetaDescription`, `MetaKeywords`, `Is_Active`, `PostUrl`, `PostImage`) 
+VALUES ('$posttitle', '$catid', '$subcatid', '$postdetails', '$metadesc', '$metakey', '$status', '$url', '$imgnewfile')");
 if($query)
 {
 $msg="Post successfully added ";
@@ -192,14 +193,6 @@ while($result=mysqli_fetch_array($ret))
 <div class="form-group m-b-20">
 <label for="exampleInputEmail1">Sub Category</label>
 <select class="form-control" name="subcategory" id="subcategory" required>
-<?php
-// Feching active categories
-$ret=mysqli_query($con,"select id,Subcategory from  tblsubcategory where CategoryId = $result['id'] AND Is_Active=1");
-while($result=mysqli_fetch_array($ret))
-{    
-?>
-<option value="<?php echo htmlentities($result['id']);?>"><?php echo htmlentities($result['CategoryName']);?></option>
-<?php } ?>
 </select> 
 </div>
          
