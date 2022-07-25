@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include('includes/config.php');
-include('includes/alerts.php');
+include('../includes/functions.php');
 error_reporting(0);
 if(strlen($_SESSION['login'])==0)
   { 
@@ -21,7 +21,7 @@ $imgfile=$_FILES["pagebanner"]["name"];
 // get the image extension
 $extension = substr($imgfile,strlen($imgfile)-4,strlen($imgfile));
 // allowed extensions
-$allowed_extensions = array(".jpg","jpeg",".png",".gif","webp");
+$allowed_extensions = array(".jpg","jpeg",".png",".gif");
 // Validation for allowed extensions .in_array() function searches an array for a specific value.
 if(!in_array($extension,$allowed_extensions))
 {
@@ -41,7 +41,7 @@ else{
 }
 if($query)
 {
-$msg="About us  page successfully updated ";
+$msg="Aboutus successfully updated ";
 }
 else{
 $error="Something went wrong . Please try again.";    
@@ -60,7 +60,7 @@ $error="Something went wrong . Please try again.";
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
         <!-- App title -->
-        <title>Blogportal | About us page</title>
+        <title>Aboutus Page | <?php echo call_user_func('get_settings','SiteName');?></title>
 
         <!-- Summernote css -->
         <link href="../plugins/summernote/summernote.css" rel="stylesheet" />
@@ -111,14 +111,14 @@ $error="Something went wrong . Please try again.";
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">About Page  </h4>
+                                    <h4 class="page-title">About Us  </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Pages</a>
                                         </li>
                                      
                                         <li class="active">
-                                         About us
+                                         About Us
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>

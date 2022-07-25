@@ -32,7 +32,7 @@ else
 //rename the image file
 $pagebanner=md5($imgfile).$extension;
 // Code for move image into directory
-move_uploaded_file($_FILES["postimage"]["tmp_name"],"postimages/media/".$pagebanner);
+move_uploaded_file($_FILES["pagebanner"]["tmp_name"],"postimages/media/".$pagebanner);
 $query=mysqli_query($con,"update tblpages set PageTitle='$pagetitle',Description='$pagedetails', `PageBanner` = '$pagebanner', `MetaDescription` = '$metadesc', `MetaKeywords` = '$metakey' where PageName='$pagetype' ");
 }
 }

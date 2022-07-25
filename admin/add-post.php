@@ -35,7 +35,7 @@ else
 //rename the image file
 $imgnewfile=md5($imgfile).$extension;
 // Code for move image into directory
-move_uploaded_file($_FILES["postimage"]["tmp_name"],__DIR__."postimages/".$imgnewfile);
+move_uploaded_file($_FILES["postimage"]["tmp_name"],"postimages/".$imgnewfile);
 
 $status=1;
 $query=mysqli_query($con,"INSERT INTO `tblposts`(`PostTitle`, `CategoryId`, `SubCategoryId`, `PostDetails`, `MetaDescription`, `MetaKeywords`, `Is_Active`, `PostUrl`, `PostImage`) 
