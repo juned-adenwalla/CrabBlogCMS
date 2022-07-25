@@ -15,6 +15,7 @@ $facebook=$_POST['facebook'];
 $twitter=$_POST['twitter'];
 $instagram = $_POST['instagram'];
 $linkedin = $_POST['linkedin'];
+$css = $_POST['css'];
 
 if($_FILES["sitelogo"]["name"] && $_FILES["reslogo"]["name"]){
     $imgfile=$_FILES["sitelogo"]["name"];
@@ -27,7 +28,7 @@ if($_FILES["sitelogo"]["name"] && $_FILES["reslogo"]["name"]){
     $rextension = substr($resfile,strlen($resfile)-4,strlen($resfile));
     $rlogo=md5($resfile).$rextension;
     move_uploaded_file($_FILES["reslogo"]["tmp_name"],"postimages/media/".$rlogo);
-    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle',`ResLogo` = '$rlogo', `SiteLogo` ='$logo', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin' where id= 1 ");
+    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle',`ResLogo` = '$rlogo', `SiteLogo` ='$logo', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin', `CustomCss` = '$css where id= 1 ");
 
 }
 else if($_FILES["sitelogo"]["name"]){
@@ -35,17 +36,17 @@ else if($_FILES["sitelogo"]["name"]){
     $extension = substr($imgfile,strlen($imgfile)-4,strlen($imgfile));
     $logo=md5($imgfile).$extension;
     move_uploaded_file($_FILES["sitelogo"]["tmp_name"],"postimages/media/".$logo);
-    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle', `SiteLogo`='$logo', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin' where id= 1 ");
+    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle', `SiteLogo`='$logo', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin', `CustomCss` = '$css where id= 1 ");
 }
 else if($_FILES["reslogo"]["name"]){
     $resfile=$_FILES["reslogo"]["name"];
     $rextension = substr($resfile,strlen($resfile)-4,strlen($resfile));
     $rlogo=md5($resfile).$rextension;
     move_uploaded_file($_FILES["reslogo"]["tmp_name"],"postimages/media/".$rlogo);
-    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle',`ResLogo` = '$rlogo', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin' where id= 1 ");
+    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle',`ResLogo` = '$rlogo', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin', `CustomCss` = '$css where id= 1 ");
 }
 else{
-    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin' where id= 1 ");
+    $query=mysqli_query($con,"update tblsettings set SiteName='$sitetitle', `Facebook` = '$facebook', `Instagram` = '$instagram', `Twitter` = '$twitter', `Linkedin` = '$linkedin', `CustomCss` = '$css' where id= 1 ");
 }
 if($query)
 {
@@ -210,6 +211,11 @@ while($row=mysqli_fetch_array($query))
                                             <label for="exampleInputEmail1">Twitter Account</label>
                                             <input type="text" class="form-control" id="pagetitle" name="twitter"
                                                 value="<?php echo htmlentities($row['Twitter'])?>" required>
+                                        </div>
+
+                                        <div class="form-group m-b-20">
+                                            <label for="exampleInputEmail1">Custom CSS</label>
+                                            <textarea name="css" cols="30" class="form-control"><?php echo htmlentities($row['CustomCss'])?></textarea>    
                                         </div>
 
                                         <?php } ?>

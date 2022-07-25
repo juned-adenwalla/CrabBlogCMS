@@ -45,9 +45,8 @@ if(isset($_POST['submit'])){
     <link href="<?php echo call_user_func('base_url', 'css/styles.css'); ?>" rel="stylesheet" />
 </head>
 <style>
-
+<?php echo call_user_func('get_settings','CustomCss');?>
 </style>
-
 <body>
     <!-- Navigation-->
     <?php include('includes/header.php'); ?>
@@ -102,7 +101,7 @@ if(isset($_POST['submit'])){
                     <?php echo call_user_func('get_ads', 'Ad_1'); ?>
                     <?php echo call_user_func('single_post', $post, 'PostDetails'); ?>
                     <?php echo call_user_func('get_ads', 'Ad_2'); ?>
-                    <div class="row" style="margin-top: 0%">
+                    <div class="row" style="margin-top: 40px">
                         <!-- <div class="d-flex justify-content-start mb-1"><a class="btn btn-primary text-uppercase"
                                 data-bs-toggle="modal" data-bs-target="#commentModal"><img
                                     src="<?php echo call_user_func('base_url', 'assets/img/comment.png'); ?>"

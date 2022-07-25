@@ -192,7 +192,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `Ad_1` text NOT NULL,
                     `Ad_2` text NOT NULL,
-                    `Ad_3` text NOT NULL,
+                    `Varification` text NOT NULL,
                     `active` int(11) NOT NULL
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
@@ -259,7 +259,8 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `Facebook` varchar(100) DEFAULT NULL,
                     `Twitter` varchar(100) DEFAULT NULL,
                     `Instagram` varchar(100) DEFAULT NULL,
-                    `Linkedin` varchar(100) DEFAULT NULL
+                    `Linkedin` varchar(100) DEFAULT NULL,
+                    `CustomCss` TEXT DEFAULT NULL
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
                 $subcategory_table = "CREATE TABLE `tblsubcategory` (

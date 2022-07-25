@@ -31,6 +31,9 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+    <style>
+<?php echo call_user_func('get_settings','CustomCss');?>
+</style>
     <body>
         <!-- Navigation-->
         <?php include('includes/header.php'); ?>

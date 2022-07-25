@@ -32,6 +32,9 @@ if(isset($_POST['submit'])){
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
+    <style>
+<?php echo call_user_func('get_settings','CustomCss');?>
+</style>
     <body>
         <!-- Navigation-->
         <?php include('includes/header.php'); ?>
