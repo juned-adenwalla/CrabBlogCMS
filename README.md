@@ -26,6 +26,14 @@ Please make sure to update tests as appropriate.
 
 ## Version Release
 
+<strong>Version 1.0.1 Released on 25th July 2022</strong>
+
+*** NEW FEATURES & FIXES ***
+* Site Code Area Added
+* Custom CSS Option Added
+* Image Upload Bug Fixed
+* Logo Upload Bug Fixed
+
 <strong>Version 1.0.0 Released on 23rd July 2022</strong>
 
 *** INITIAL RELEASE ***
