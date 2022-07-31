@@ -1,8 +1,9 @@
-# Crab Blog CMS &nbsp; [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjuned-adenwalla%2Fblog-portal&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+# Crab Blog CMS &nbsp;&nbsp; <img style="width: 140px;" src="https://thepager.in/admin/postimages/287d06faed97972e1001dbf1bdf8cf53.png">
 
 Crab Blog CMS is a free and open-source content management system written in PHP and paired with a MySQL, Crab is a CMS for creating simple blog for any niche. Publish your passions your way. Whether you'd like to share your knowledge, experiences or the latest news, create a unique and beautiful blog for FREE!!!.
 
 Check Script Demo : <a href="https://thepager.in/">Click Me</a>
+&nbsp; [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjuned-adenwalla%2Fblog-portal&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) 
 
 ## Installation
 
