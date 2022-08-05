@@ -487,6 +487,13 @@ progress {
   display: none !important;
 }
 
+.logo{
+  width: 180px
+}
+.rlogo{
+  width: 180px;
+}
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;

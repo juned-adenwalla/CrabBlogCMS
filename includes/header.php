@@ -28,8 +28,8 @@ if(isset($_POST['subscribe'])){
 ?>
 <nav style="position: absolute" class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="<?php echo call_user_func('base_url', ''); ?>"><img class="logo" style="width: 180px" src="<?php $data = call_user_func('get_settings','SiteLogo'); echo call_user_func('base_url', "admin/postimages/media/$data");?>" alt="Logo"></a>
-                <a class="navbar-brand-responsive" href="<?php echo call_user_func('base_url', 'index'); ?>"><img class="rlogo" style="width: 180px" src="<?php $data = call_user_func('get_settings','ResLogo'); echo call_user_func('base_url', "admin/postimages/media/$data");?>" alt="Logo"></a>
+                <a class="navbar-brand" href="<?php echo call_user_func('base_url', ''); ?>"><img class="logo" src="<?php $data = call_user_func('get_settings','SiteLogo'); echo call_user_func('base_url', "admin/postimages/media/$data");?>" alt="Logo"></a>
+                <a class="navbar-brand-responsive" href="<?php echo call_user_func('base_url', 'index'); ?>"><img class="rlogo" src="<?php $data = call_user_func('get_settings','ResLogo'); echo call_user_func('base_url', "admin/postimages/media/$data");?>" alt="Logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
