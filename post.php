@@ -43,13 +43,13 @@ if(isset($_POST['submit'])){
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="<?php echo call_user_func('base_url', 'css/styles.css'); ?>" rel="stylesheet" />
+    <!-- Navigation-->
+<?php include('includes/header.php'); ?>
 </head>
 <style>
 <?php echo call_user_func('get_settings','CustomCss');?>
 </style>
 <body>
-    <!-- Navigation-->
-    <?php include('includes/header.php'); ?>
     <!-- Page Header-->
     <header class="masthead"
         style="background-image: url('<?php echo call_user_func('base_url', 'admin/postimages/'); ?><?php echo call_user_func('single_post', $post, 'PostImage'); ?>')">

@@ -1,4 +1,4 @@
-<?php echo call_user_func('get_ads', 'Varification'); 
+<?php echo call_user_func('get_ads', 'Verification'); 
 include('includes/config.php');
 include('includes/alerts.php');
 if(isset($_POST['subscribe'])){

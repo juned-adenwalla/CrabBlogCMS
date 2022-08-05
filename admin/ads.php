@@ -147,7 +147,7 @@ while($row=mysqli_fetch_array($query))
 </div>
 
 <div class="form-group m-b-20">
-<label for="exampleInputEmail1">Verification Code</label>
+<label for="exampleInputEmail1">Verification/Tracking Code's</label>
 <textarea class="form-control" name="ad3"><?php echo htmlentities($row['Verification'])?></textarea>
 </div>
 

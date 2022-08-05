@@ -33,13 +33,13 @@ $total_pages = ceil($total_rows / $no_of_records_per_page);
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+        <!-- Navigation-->
+        <?php include('includes/header.php'); ?>
 </head>
 <style>
 <?php echo call_user_func('get_settings','CustomCss');?>
 </style>
 <body>
-    <!-- Navigation-->
-    <?php include('includes/header.php'); ?>
     <!-- Page Header-->
     <header class="masthead"
         style="background-image: url(<?php $data = call_user_func('get_metaData', 'homepage', 'PageBanner'); echo call_user_func('base_url', "admin/postimages/media/$data") ?>)">
