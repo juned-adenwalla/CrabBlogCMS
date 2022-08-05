@@ -27,6 +27,13 @@ Please make sure to update tests as appropriate.
 
 ## Version Release
 
+<strong>Version 1.0.2 Released on 05th August 2022</strong>
+
+*** NEW FEATURES & FIXES ***
+* Major Bug Fixed
+* Admin Panel UI Improved
+* Newsletter Option Added
+
 <strong>Version 1.0.1 Released on 25th July 2022</strong>
 
 *** NEW FEATURES & FIXES ***
