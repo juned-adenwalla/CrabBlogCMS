@@ -16,7 +16,7 @@ $ad2=$_POST['ad2'];
 $ad3=$_POST['ad3'];
 $active = $_POST['active'];
 
-$query=mysqli_query($con,"UPDATE `tblads` SET `Ad_1`='$ad1',`Ad_2`='$ad2',`Ad_3`='$ad3', `active` = $active WHERE `id` = 1");
+$query=mysqli_query($con,"UPDATE `tblads` SET `Ad_1`='$ad1',`Ad_2`='$ad2',`Verification`='$ad3', `active` = $active WHERE `id` = 1");
 if($query)
 {
 $msg="Ads successfully updated ";
@@ -147,8 +147,8 @@ while($row=mysqli_fetch_array($query))
 </div>
 
 <div class="form-group m-b-20">
-<label for="exampleInputEmail1">Ad Space 3 (Pages)</label>
-<textarea class="form-control" name="ad3"  required><?php echo htmlentities($row['Ad_3'])?></textarea>
+<label for="exampleInputEmail1">Verification Code</label>
+<textarea class="form-control" name="ad3"><?php echo htmlentities($row['Varification'])?></textarea>
 </div>
 
 <div class="form-check" style="margin-bottom: 10px">

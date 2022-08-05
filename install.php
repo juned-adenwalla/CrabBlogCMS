@@ -24,7 +24,7 @@ if(isset($_POST['install'])){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>Signin Template · Bootstrap v5.2</title>
+    <title>Installation· Crab CMS v1.0.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 
@@ -138,7 +138,7 @@ body {
     
 <main class="form-signin w-100 m-auto">
   <form action="" method="POST">
-    <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <img class="mb-4" src="assets/img/cms_logo.png" alt="" width="180" height="57">
 
     <div class="form-floating">
       <input type="text" class="form-control" name="dbhost" id="floatingInput" placeholder="localhost">
@@ -172,7 +172,7 @@ body {
     </div>
 
     <input class="w-100 btn btn-lg btn-primary" type="submit" name="install" value="Install">
-    <p class="mt-5 mb-3 text-muted">&copy; 2022-2023</p>
+    <p class="mt-5 mb-3 text-muted">Crab CMS &copy; 2022-2023</p>
   </form>
 </main>
 

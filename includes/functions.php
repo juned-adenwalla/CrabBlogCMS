@@ -81,12 +81,16 @@ function base_url($url){
 
 function post_comment($postid, $name, $email, $comment, $st1){
     require('config.php');
+    require('alerts.php');
     $query=mysqli_query($con,"insert into tblcomments(postId,name,email,comment,status) values('$postid','$name','$email','$comment','$st1')");
    if($query):
-     echo "<script>alert('comment successfully submit. Comment will be display after admin review ');</script>";
+     $alert = new PHPAlert();
+     $alert->success("Comment Successfull");
      unset($_SESSION['token']);
    else :
     echo "<script>alert('Something went wrong. Please try again.');</script>";  
+    $alert = new PHPAlert();
+     $alert->warn("Comment Failed");
    
    endif;
 }
@@ -178,7 +182,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
             if($temp_conn->query($db)){
                 $temp_conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
-                $admin_table = "CREATE TABLE `tbladmin` (
+                $admin_table = "CREATE TABLE IF NOT EXISTS `tbladmin` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `AdminUserName` varchar(255) NOT NULL,
                     `AdminPassword` varchar(255) NOT NULL,
@@ -186,26 +190,26 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `Is_Active` int(11) NOT NULL,
                     `CreationDate` timestamp NOT NULL DEFAULT current_timestamp(),
                     `UpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
-                  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-                $ad_table = "CREATE TABLE `tblads` (
+                $ad_table = "CREATE TABLE IF NOT EXISTS `tblads` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `Ad_1` text NOT NULL,
                     `Ad_2` text NOT NULL,
                     `Varification` text NOT NULL,
                     `active` int(11) NOT NULL
-                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-                $category_table = "CREATE TABLE `tblcategory` (
+                $category_table = "CREATE TABLE IF NOT EXISTS `tblcategory` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `CategoryName` varchar(200) DEFAULT NULL,
                     `Description` mediumtext DEFAULT NULL,
                     `PostingDate` timestamp NULL DEFAULT current_timestamp(),
                     `UpdationDate` timestamp NULL DEFAULT NULL,
                     `Is_Active` int(1) DEFAULT NULL
-                  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-                $comment_table = "CREATE TABLE `tblcomments` (
+                $comment_table = "CREATE TABLE IF NOT EXISTS `tblcomments` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `postId` char(11) DEFAULT NULL,
                     `name` varchar(120) DEFAULT NULL,
@@ -213,18 +217,18 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `comment` mediumtext DEFAULT NULL,
                     `postingDate` timestamp NULL DEFAULT current_timestamp(),
                     `status` int(1) DEFAULT NULL
-                  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   
-                $contact_table = "CREATE TABLE `tblcontact` (
+                $contact_table = "CREATE TABLE IF NOT EXISTS `tblcontact` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `FullName` varchar(50) NOT NULL,
                     `EmailId` varchar(100) NOT NULL,
                     `PhoneNo` varchar(20) NOT NULL,
                     `Message` varchar(250) NOT NULL,
                     `PostedAt` datetime NOT NULL DEFAULT current_timestamp()
-                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   
-                $page_table = "CREATE TABLE `tblpages` (
+                $page_table = "CREATE TABLE IF NOT EXISTS `tblpages` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `PageName` varchar(200) DEFAULT NULL,
                     `PageTitle` TEXT DEFAULT NULL,
@@ -234,14 +238,14 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `MetaKeywords` varchar(160) DEFAULT NULL,
                     `PostingDate` timestamp NULL DEFAULT current_timestamp(),
                     `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
-                  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   
-                $post_table = "CREATE TABLE `tblposts` (
+                $post_table = "CREATE TABLE IF NOT EXISTS `tblposts` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `PostTitle` longtext DEFAULT NULL,
                     `CategoryId` int(11) DEFAULT NULL,
                     `SubCategoryId` int(11) DEFAULT NULL,
-                    `PostDetails` varchar(1000) DEFAULT NULL,
+                    `PostDetails` text DEFAULT NULL,
                     `MetaDescription` varchar(200) NOT NULL,
                     `MetaKeywords` varchar(160) NOT NULL,
                     `PostingDate` timestamp NULL DEFAULT current_timestamp(),
@@ -249,9 +253,9 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `Is_Active` int(1) DEFAULT NULL,
                     `PostUrl` mediumtext DEFAULT NULL,
                     `PostImage` varchar(255) DEFAULT NULL
-                  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
                   
-                $setting_table = "CREATE TABLE `tblsettings` (
+                $setting_table = "CREATE TABLE IF NOT EXISTS `tblsettings` (
                     `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `SiteName` varchar(50) DEFAULT NULL,
                     `SiteLogo` varchar(100) DEFAULT NULL,
@@ -261,9 +265,9 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `Instagram` varchar(100) DEFAULT NULL,
                     `Linkedin` varchar(100) DEFAULT NULL,
                     `CustomCss` TEXT DEFAULT NULL
-                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-                $subcategory_table = "CREATE TABLE `tblsubcategory` (
+                $subcategory_table = "CREATE TABLE IF NOT EXISTS `tblsubcategory` (
                     `SubCategoryId` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
                     `CategoryId` int(11) DEFAULT NULL,
                     `Subcategory` varchar(255) DEFAULT NULL,
@@ -271,15 +275,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `PostingDate` timestamp NOT NULL DEFAULT current_timestamp(),
                     `UpdationDate` timestamp NULL DEFAULT NULL,
                     `Is_Active` int(1) DEFAULT NULL
-                  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;";  
-
-
-
-    
-
-
-                
-
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";  
 
                 $tables = [$admin_table,$ad_table,$category_table,$comment_table,$contact_table,$page_table,$post_table,$setting_table,$subcategory_table];
 
@@ -298,7 +294,7 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     $admin_data = "INSERT INTO `tbladmin` (`id`, `AdminUserName`, `AdminPassword`, `AdminEmailId`, `Is_Active`) VALUES
                         (1, '$adminuser', '$enc_password', '$adminemail', 1);";
 
-                    $ad_data = "INSERT INTO `tblads` (`id`, `Ad_1`, `Ad_2`, `Ad_3`, `active`) VALUES
+                    $ad_data = "INSERT INTO `tblads` (`id`, `Ad_1`, `Ad_2`, `Varification`, `active`) VALUES
                         (1, 'Insert Code', 'Insert Code', 'Insert Code', 1);";
                     $page_data =  "INSERT INTO `tblpages` (`id`, `PageName`, `PageTitle`, `Description`, `PageBanner`, `MetaDescription`, `MetaKeywords`) VALUES
                         (1, 'aboutus', 'Page Name', 'Page Description', '', 'Meta Description', 'Meta Keywords'),

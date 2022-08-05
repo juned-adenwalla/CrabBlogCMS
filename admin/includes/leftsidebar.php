@@ -32,7 +32,7 @@
                                 </ul>
                             </li>               
   <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Posts </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span>All Posts </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="add-post.php">Add Posts</a></li>
                                     <li><a href="manage-posts.php">Manage Posts</a></li>
@@ -42,7 +42,7 @@
                      
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Settings </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span>All Settings </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="settings.php">Site Settings</a></li>
                                     <li><a href="ads.php">Advertisement</a></li>
@@ -55,6 +55,8 @@
    <li class="has_sub">
                                 <a href="contact.php" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Messages </span> </a>
                          
+                            </li>
+
                             </li>
 
                             <li class="has_sub">

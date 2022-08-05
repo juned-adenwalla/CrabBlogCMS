@@ -175,42 +175,50 @@ while($row=mysqli_fetch_array($query))
                                                 value="<?php echo htmlentities($row['SiteName'])?>" required>
                                         </div>
 
-                                        <div class="form-group m-b-20">
+                                        <div class="col-sm-6 form-group m-b-20">
                                             <label for="exampleInputEmail1">Site Logo</label>
                                             <input type="file" class="form-control" id="logo" name="sitelogo">
                                             <img src="postimages/media/<?php echo htmlentities($row['SiteLogo'])?>"
                                                 alt="logo">
                                         </div>
 
-                                        <div class="form-group m-b-20">
+                                        <div class="col-sm-6 form-group m-b-20">
                                             <label for="exampleInputEmail1">Site Logo (Responsive)</label>
                                             <input type="file" class="form-control" id="reslogo" name="reslogo">
                                             <img src="postimages/media/<?php echo htmlentities($row['ResLogo'])?>"
                                                 alt="logo">
                                         </div>
 
-                                        <div class="form-group m-b-20">
-                                            <label for="exampleInputEmail1">Facebook page</label>
-                                            <input type="text" class="form-control" id="pagetitle" name="facebook"
-                                                value="<?php echo htmlentities($row['Facebook'])?>" required>
+                                        <div class="col-sm-3 form-group">
+                                            <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1"><img src="assets/images/icons/facebook.png" style="width: 20px" alt="Facebook"></span>
+                                            <input type="text" class="form-control" name="facebook"
+                                                value="<?php echo htmlentities($row['Facebook'])?>" required aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
                                         </div>
 
-                                        <div class="form-group m-b-20">
-                                            <label for="exampleInputEmail1">Instagram page</label>
-                                            <input type="text" class="form-control" id="pagetitle" name="instagram"
-                                                value="<?php echo htmlentities($row['Instagram'])?>" required>
+                                        <div class="col-sm-3 form-group ">
+                                            <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1"><img src="assets/images/icons/instagram.png" style="width: 20px" alt="Facebook"></span>
+                                            <input type="text" class="form-control" name="instagram"
+                                                value="<?php echo htmlentities($row['Instagram'])?>" required aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
                                         </div>
 
-                                        <div class="form-group m-b-20">
-                                            <label for="exampleInputEmail1">Linkedin Page</label>
-                                            <input type="text" class="form-control" id="pagetitle" name="linkedin"
-                                                value="<?php echo htmlentities($row['Linkedin'])?>" required>
+                                        <div class="col-sm-3 form-group ">
+                                            <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1"><img src="assets/images/icons/linkedin.png" style="width: 20px" alt="Facebook"></span>
+                                            <input type="text" class="form-control" name="linkedin"
+                                                value="<?php echo htmlentities($row['Linkedin'])?>" required aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
                                         </div>
 
-                                        <div class="form-group m-b-20">
-                                            <label for="exampleInputEmail1">Twitter Account</label>
-                                            <input type="text" class="form-control" id="pagetitle" name="twitter"
-                                                value="<?php echo htmlentities($row['Twitter'])?>" required>
+                                        <div class="col-sm-3 form-group ">
+                                            <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1"><img src="assets/images/icons/twitter.png" style="width: 20px" alt="Facebook"></span></span>
+                                            <input type="text" class="form-control" name="twitter"
+                                                value="<?php echo htmlentities($row['Twitter'])?>" required aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
                                         </div>
 
                                         <div class="form-group m-b-20">
