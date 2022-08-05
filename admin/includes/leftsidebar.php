@@ -57,6 +57,11 @@
                          
                             </li>
 
+                            <li class="has_sub">
+                                <a href="subscribers.php" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Newsletter </span> </a>
+                         
+                            </li>
+
                             </li>
 
                             <li class="has_sub">
