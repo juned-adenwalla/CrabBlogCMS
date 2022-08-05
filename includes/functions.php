@@ -277,7 +277,14 @@ function install($dbhost, $dbname, $dbpass, $dbuser, $siteurl, $adminuser, $admi
                     `Is_Active` int(1) DEFAULT NULL
                   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";  
 
-                $tables = [$admin_table,$ad_table,$category_table,$comment_table,$contact_table,$page_table,$post_table,$setting_table,$subcategory_table];
+                $subscribers_table = "CREATE TABLE IF NOT EXISTS `tblsubscribers` (
+                    `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+                    `email` varchar(255) DEFAULT NULL,
+                    `active` int(11) DEFAULT NULL,
+                    `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+                  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+
+                $tables = [$admin_table,$ad_table,$category_table,$comment_table,$contact_table,$page_table,$post_table,$setting_table,$subcategory_table,$subscribers_table];
 
                 foreach($tables as $k => $sql){
                     $query = @$temp_conn->query($sql);
